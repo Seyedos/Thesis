@@ -1,7 +1,7 @@
-pandas
 numpy
-matplotlib
-seaborn
 scipy
-joblib
-scikit-learn
+sklearn
+matplotlib
+keras
+pandas
+random
