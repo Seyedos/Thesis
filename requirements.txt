@@ -2,6 +2,6 @@ numpy
 scipy
 sklearn
 matplotlib
-keras
+tensorflow
 pandas
 random
