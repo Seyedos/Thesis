@@ -17,7 +17,7 @@ def systemofeq(par, deltas):
     # Input: deltas; a guess for the solution of the model
     #        par: a dictionary containing the parameters of the baseline model
     # Output: eqs; a 4x1 vector that measures the distance to the solution (the solution needs to satisfy four equations)
-    
+
     delta_k = deltas[0]
     delta_kz = deltas[1]
     delta_ck = deltas[2]
@@ -353,8 +353,8 @@ def main():
     X_train, y_train, X_test, y_test = split_data(X, y, num_sim)
     num_SS = np.size(X, 1)
 
-    predictions_nn = neural_network(X_train, y_train, X_test, y_test, num_SS)
-    # predictions_el = elastic_net(X_train[0], y_train[0], X_test[0], y_test[0])
+    predictions_nn = neural_network(X_train, y_train, X_test, num_SS)
+    # predictions_el = elastic_net(X_train[0], y_train[0], X_test[0])
 
     accuracy_statistics(predictions_nn, y_test[0], np.size(y_test[0], axis=0))
     # accuracy_statistics(np.array(predictions_el).T, y_test[0], np.size(y_test[0], axis=0))
