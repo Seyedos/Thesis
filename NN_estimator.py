@@ -11,14 +11,13 @@ from random import shuffle
 import numpy as np
 import pandas as pd
 
-# Define all the functions needed
-
 
 def systemofeq(par, deltas):
     # Summary: this function is needed to compute the solution of the baseline representative agent model
     # Input: deltas; a guess for the solution of the model
     #        par: a dictionary containing the parameters of the baseline model
     # Output: eqs; a 4x1 vector that measures the distance to the solution (the solution needs to satisfy four equations)
+    
     delta_k = deltas[0]
     delta_kz = deltas[1]
     delta_ck = deltas[2]
@@ -96,6 +95,7 @@ def extract_summary_statistics(X, crossterms_SS):
     # Input: X; the data set
     #        crossterms_SS; a boolean whether or not to add crossterms
     # Output: SS; a list with all calculated summary statistics
+
     data = np.array(X)
     data_trans = data.transpose()
 
@@ -150,7 +150,6 @@ def split_data(X, y, num_sim):
     #         X_test_list; list with 5 folds of testing data 
     #         y_test_list; list with 5 folds of testing validating data 
 
-
     # Set random state to 1 for reproducable results
     kfold = KFold(5, shuffle=True, random_state=1)
     X_train_list = []
@@ -172,7 +171,6 @@ def accuracy_visual(predictions, true_values, num_sim, split):
     #        true_values; real parameter values
     #        num_sim; number of simulations
     #        split; number of observations in validating data
-
 
     rho_pred = np.array(predictions[:, 0])
     s2_pred = np.array(predictions[:, 1])
